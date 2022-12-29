@@ -1,0 +1,25 @@
+---
+import Logo from "./Icons/Logo.astro";
+import Button from "./Button.astro";
+import PlusIcon from "./Icons/PlusIcon.astro";
+import VisuallyHidden from "./VisuallyHidden.astro";
+import VerticalEllipsesIcon from "./Icons/VerticalEllipsesIcon.astro";
+
+
+---
+<header class='p-4 grid grid-cols-[auto_1fr_auto_auto] items-center gap-4 dark:bg-grey-600'>
+  <Logo variant='mobile' />
+  <h2 class='heading-l dark:text-white'>Platform Launch</h2>
+  <button class='bg-purple-200 bg-opacity-25 rounded-3xl px-[18px] py-[10px] md:flex md:items-center md:py-[15px] md:px-[25px]'>
+    <PlusIcon />
+    <span class='sr-only md:static md:w-auto md:h-auto md:ml-1 md:overflow-visible md:heading-m md:text-white'>
+      Add New Task
+    </span>
+  </button>
+  <Button variant='transparent'>
+    <VerticalEllipsesIcon />
+    <VisuallyHidden>
+      View Options
+    </VisuallyHidden>
+  </Button>
+</header>
