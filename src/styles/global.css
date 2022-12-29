@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Typography */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/PlusJakartaSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/PlusJakartaSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .heading-xl {
+    @apply text-2xl font-bold leading-8;
+  }
+  .heading-l {
+    @apply text-lg font-bold leading-6;
+  }
+  .heading-m {
+    @apply text-sm font-bold leading-5;
+  }
+  .heading-s {
+    @apply text-xs font-bold leading-4 tracking-[2.4px];
+  }
+  .body-l {
+    @apply text-[13px] font-medium leading-6;
+  }
+  .body-m {
+    @apply text-xs font-bold leading-4;
+  }
+}
+
