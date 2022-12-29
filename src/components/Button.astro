@@ -1,0 +1,9 @@
+---
+const { variant = 'primary', size = 'l', href } = Astro.props;
+
+const Element = href ? 'a' : 'button';
+---
+
+<Element class={`${variant === 'primary' ? "bg-purple-200 text-white hover:bg-purple-100" : variant === 'secondary' ? 'bg-purple-200 bg-opacity-10 text-purple-200 hover:bg-opacity-25' : variant === 'destructive' && 'bg-red-200 text-white hover:bg-red-100'} rounded-3xl w-fit ${size === 'l' ? 'min-h-[48px]' : size === 's' && 'min-h-[40px]'} heading-m px-[18px] py-[15px]`}>
+  <slot />
+</Element>
