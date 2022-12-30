@@ -29,7 +29,7 @@
   .heading-m {
     @apply text-sm font-bold leading-5;
   }
-  .heading-s {
+  .heading-sm {
     @apply text-xs font-bold leading-4 tracking-[2.4px];
   }
   .body-l {
