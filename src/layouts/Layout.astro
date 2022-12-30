@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
 import '../styles/global.css';
 export interface Props {
 	title: string;
@@ -17,8 +18,9 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class='grid grid-cols-1 md:grid-cols-[auto_1fr]'>
 		<Header />
+		<Sidebar />
 		<slot />
 	</body>
 </html>
