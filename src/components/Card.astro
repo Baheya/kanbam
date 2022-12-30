@@ -1,8 +1,14 @@
 ---
-const { title, subtitle } = Astro.props;
+import { getEditableAttributes } from '../utils/storyblok.js'
+ 
+ const { blok, subtitle } = Astro.props
+	
+ const editableAttributes: any = await getEditableAttributes(blok)
 ---
 
-<li class='bg-white rounded-lg shadow-md list-none px-4 py-6 dark:bg-grey-500'>
-	<h3 class='heading-m mb-2 dark:text-white'>{title}</h3>
+<li data-blok-c={editableAttributes['data-blok-c']}
+data-blok-uid={editableAttributes['data-blok-uid']}
+class:list={['bg-white rounded-lg shadow-md list-none px-4 py-6 dark:bg-grey-500', { 'storyblok__outline': editableAttributes }]}>
+	<h3 class='heading-m mb-2 dark:text-white'>{blok.title}</h3>
 	<p class='body-m text-grey-300'>{subtitle}</p>
 </li>
