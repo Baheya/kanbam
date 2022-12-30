@@ -1,0 +1,15 @@
+---
+const { label, checked = 'false' } = Astro.props;
+---
+
+<div role="switch"
+     aria-checked={checked}
+     tabindex="0"
+     class='group rounded select-none'>
+  <span class="sr-only">
+    {label}
+  </span>
+  <span class="switch relative inline-block top-1 bg-purple-200 rounded-xl h-5 w-10">
+    <span class='absolute top-[2px] left-[2px] inline-block rounded-lg h-4 w-4 bg-white group-aria-checked:left-[21px]'></span>
+  </span>
+</div>

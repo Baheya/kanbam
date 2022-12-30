@@ -1,0 +1,45 @@
+---
+import MoonIcon from "./Icons/MoonIcon.astro";
+import SunIcon from "./Icons/SunIcon.astro";
+import Switch from "./Switch.astro";
+---
+
+<div class='group-[.sidebar]:mt-auto flex items-center justify-center gap-6 rounded-md bg-grey-100 py-[14px] mx-3 dark:bg-grey-600'>
+  <SunIcon />
+  <Switch label="Dark Mode Toggle" />
+  <MoonIcon />
+</div>
+
+<script is:inline>
+const theme = (() => {
+  
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    return "dark";
+  }
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+    document.querySelector('[role=switch]').setAttribute('aria-checked', 'false');
+  } else {
+    document.documentElement.classList.add("dark");
+    document.querySelector('[role=switch]').setAttribute('aria-checked', 'true');
+  }
+  window.localStorage.setItem("theme", theme);
+
+  document.querySelectorAll('[role=switch]').forEach((element) => {
+    element.addEventListener('click', () => {
+      if (element.getAttribute('aria-checked') === 'false') {
+        document.documentElement.classList.add("dark");
+        element.setAttribute('aria-checked', 'true');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove("dark");
+        element.setAttribute('aria-checked', 'false');
+        localStorage.setItem('theme', 'light');
+      }
+    })
+  })
+</script>
