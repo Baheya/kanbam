@@ -16,9 +16,12 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
  
 const story = await getStory(slug);
+
+let links = await getLinks('boards/');
+links = Object.values(links);
 ---
  
-<Layout story={story} />
+<Layout story={story} links={links} slug={slug} />
 
 <script>
   import { activateStoryblokBridge } from '../utils/storyblok.js'

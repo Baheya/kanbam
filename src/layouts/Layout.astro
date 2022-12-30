@@ -4,7 +4,7 @@ import Page from '../components/Page.astro';
 import Sidebar from '../components/Sidebar.astro';
 import '../styles/global.css';
 
-const { story } = Astro.props
+const { story, slug, links } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ const { story } = Astro.props
 	</head>
 	<body class='grid grid-cols-1 grid-rows-[auto_1fr] md:grid-cols-[auto_1fr] h-full dark:bg-grey-600'>
 		<Header title={story.name} />
-		<Sidebar />
+		<Sidebar slug={slug} links={links} />
 		<Page story={story} />
 	</body>
 </html>
