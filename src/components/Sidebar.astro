@@ -1,11 +1,11 @@
 ---
-import BoardIcon from "./Icons/BoardIcon.astro";
+import DarkModeToggle from "./DarkModeToggle.astro";
 import Logo from "./Icons/Logo.astro"
 import PlusIcon from "./Icons/PlusIcon.astro";
 import SidebarItem from "./SidebarItem.astro";
 
 ---
-<div class='hidden md:block md:col-start-1 md:row-start-1 md:row-end-7'>
+<div class='group sidebar hidden md:block md:col-start-1 md:row-start-1 md:row-end-7 dark:bg-grey-500'>
 <Logo class='ml-6' variant='dark' />
 <ul>
   <h2 class='uppercase heading-sm text-grey-300 pl-6 mb-5'>All Boards</h2>
@@ -14,4 +14,5 @@ import SidebarItem from "./SidebarItem.astro";
   <SidebarItem href='/roadmap'>Roadmap</SidebarItem>
   <SidebarItem><PlusIcon /> Create New Board</SidebarItem>
 </ul>
+<DarkModeToggle />
 </div>
