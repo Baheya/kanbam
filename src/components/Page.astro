@@ -12,7 +12,7 @@ import PlusIcon from './Icons/PlusIcon.astro';
  <main data-blok-c={editableAttributes['data-blok-c']}
  data-blok-uid={editableAttributes['data-blok-uid']}
  class:list={[{ 'storyblok__outline': editableAttributes }, 'col-start-2 row-start-2']}>
-   {story.content.body.length === 0 ? 
+   {!story.content.body || story.content.body.length === 0  ? 
    <div class='flex flex-col heading-l text-grey-300 justify-center items-center h-full mx-4'><p class='mb-6 text-center'>This board is empty. Create a new column to get started.</p><Button variant='primary'><PlusIcon />Add New Column</Button></div> 
    : <StoryblokComponents story={story} />}
  </main>

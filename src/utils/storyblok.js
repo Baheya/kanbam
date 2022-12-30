@@ -16,9 +16,10 @@ const { storyblokApi } = storyblokInit({
   use: [apiPlugin],
 })
  
-export async function getLinks() {
+export async function getLinks(starts_with) {
   const { data } = await storyblokApi.get('cdn/links', {
     version: 'draft',
+    starts_with: starts_with ?? '',
   })
  
   const links = data ? data.links : null
