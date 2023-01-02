@@ -11,7 +11,7 @@ const { slug, links } = Astro.props;
   <Logo class='ml-6' variant='dark' />
   <ul>
     <h2 class='uppercase heading-sm text-grey-300 pl-6 mb-5'>All Boards</h2>
-    {links.map((link: any) => {
+    {links?.map((link: any) => {
     return <SidebarItem href={`/${link.slug}`} active={link.slug === slug}>{link.name}</SidebarItem>
   })}
   <SidebarItem><PlusIcon /> Create New Board</SidebarItem>
