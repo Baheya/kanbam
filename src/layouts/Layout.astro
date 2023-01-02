@@ -16,7 +16,7 @@ const { story, slug, links } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{story.name}</title>
 	</head>
-	<body class='grid grid-cols-1 grid-rows-[auto_1fr] md:grid-cols-[auto_1fr] h-full dark:bg-grey-600'>
+	<body class='grid grid-cols-1 grid-rows-[auto_1fr] md:grid-cols-[auto_1fr] h-full'>
 		<Header title={story.name} />
 		<Sidebar slug={slug} links={links} />
 		<Page story={story} />

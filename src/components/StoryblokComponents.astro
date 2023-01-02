@@ -1,5 +1,6 @@
 ---
-import Card from './Card.astro';
+import Task from './Task.astro';
+import Column from './Column.astro';
  
 const { story } = Astro.props;
 ---
@@ -7,6 +8,8 @@ const { story } = Astro.props;
 {story?.content?.body?.map((blok: { component: any; }) => {
   switch(blok.component) {
     case 'task':
-      return <Card blok={blok} />
+      return <Task blok={blok} />
+      case 'column':
+      return <Column blok={blok} />
   }
 })}

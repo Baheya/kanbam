@@ -1,0 +1,17 @@
+---
+import { getEditableAttributes } from '../utils/storyblok.js';
+import Task from './Task.astro';
+
+ 
+ const { blok, subtitle } = Astro.props;
+	
+ const editableAttributes: any = await getEditableAttributes(blok);
+---
+
+<ul  data-blok-c={editableAttributes['data-blok-c']}
+data-blok-uid={editableAttributes['data-blok-uid']} class:list={['flex flex-col w-72 gap-y-5 mx-4 mt-6', { 'storyblok__outline': editableAttributes }]}>
+<h4 class='heading-sm uppercase text-grey-300 flex items-center gap-3'><span class='rounded-full bg-[#49C4E5] w-[15px] h-[15px] block' />To Do</h4>
+  {blok.body?.map((item: any) => {
+    return <Task blok={item}  />
+  })}
+</ul>

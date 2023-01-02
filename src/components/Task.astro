@@ -1,9 +1,9 @@
 ---
-import { getEditableAttributes } from '../utils/storyblok.js'
+import { getEditableAttributes } from '../utils/storyblok.js';
  
- const { blok, subtitle } = Astro.props
+ const { blok, subtitle } = Astro.props;
 	
- const editableAttributes: any = await getEditableAttributes(blok)
+ const editableAttributes: any = await getEditableAttributes(blok);
 ---
 
 <li data-blok-c={editableAttributes['data-blok-c']}
